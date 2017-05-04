@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html ng-app="myApp">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+    <script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.2.0.js"></script>
+    <script src="app/app.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="app/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="MyCtrl">
+        <div style="padding-left:5%"><h2>Accordion Example</h2></div>
+        <div class="container-fluid" style="margin-left:10%;width:50%;margin-top:2%;">
+            <div class="row">
+                <accordion>
+                    <accordion-group ng-repeat="group in groups" is-open="group.open">
+                        <accordion-heading>
+                            {{group.title}}
+                        </accordion-heading>
+                        <div ng-repeat="contents in group.contents">
+                            {{contents.content}}
+                        </div>
+                    </accordion-group>
+                </accordion>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
